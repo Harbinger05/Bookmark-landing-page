@@ -546,7 +546,7 @@ body {
 }
 
 .error {
-    color: hsl(0, 94%, 66%);
+    color: white;
     font-size: 0.9rem;
     font-style: italic;
     position: absolute;
