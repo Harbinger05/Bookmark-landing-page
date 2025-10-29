@@ -4,8 +4,9 @@ const sharingBtn = document.querySelector('.sharing-btn')
 const simpleTab = document.querySelector('.simple-booking')
 const speedyTab = document.querySelector('.speedy')
 const sharingTab = document.querySelector('.sharing')
-const question = document.querySelector('.question')
-const answer = document.querySelector('.ans')
+const question = document.querySelectorAll('.question')
+const answer = document.querySelectorAll('.ans')
+const arrowIcon = document.querySelectorAll('.arrow-icon')
 const form = document.querySelector('form')
 const emailInput = document.querySelector('#email')
 const inputErr = document.querySelector('.error')
@@ -21,6 +22,7 @@ simpleBtn.addEventListener("click", () => {
 
 searchBtn.addEventListener("click", () => {
     simpleTab.style.display = 'none'
+    sharingTab.style.display = 'none'
     speedyTab.style.display = 'flex'
 })
 
@@ -31,8 +33,11 @@ sharingBtn.addEventListener("click", () => {
 })
 
 
-question.addEventListener("click", () => {
-    answer.classList.toggle('show-answer')
+question.forEach((ques, i) => {
+    ques.addEventListener("click", () => {
+        answer[i].classList.toggle('show-answer')
+        arrowIcon[i].classList.toggle('rotate')
+    })
 })
 
 
